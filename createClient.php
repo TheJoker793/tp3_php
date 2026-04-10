@@ -33,34 +33,7 @@ if (!empty($_POST)) {
       include 'layout/header.php';
       ?>
     <div class="container">
-        <?php
-            if (!empty($_POST)) {
-                // Récupérer les informations du client à partir du formulaire
-                $nom = $_POST['nom'];
-                $prenom = $_POST['prenom'];
-                $dateN = $_POST['dateN'];
-                $adresse = $_POST['adresse'];
-                $tel = $_POST['tel'];
 
-                // Ajouter le contenu dans la table client dans la BD
-                // Préparer la requête d'insertion
-                $sql = "INSERT INTO client (nom, prenom, datenaissance, adresse, tel) 
-                        VALUES ('$nom', '$prenom', '$dateN', '$adresse', $tel)";
-                // Envoyer la requête
-                $reponse = $con->exec($sql);
-
-                if ($reponse) {
-                    echo '<div class="alert alert-success" role="alert">';
-                        echo "Insertion efféctuée avec succès";
-                    echo '</div>';
-                } else {
-                    echo '<div class="alert alert-danger" role="alert">';
-                        echo "Problème d'insertion du client";
-                    echo '</div>';    
-                }
-            }
-        ?>
-        <hr>
         <fieldset>
             <legend><h2>Nouveau Client</h2></legend>
             <hr>

@@ -27,7 +27,7 @@ include 'layout/header.php';
     <table class="table table-hover table-striped">
         <thead class="table-dark">
             <tr>
-                <th>ID</th>
+                <th>#</th>
                 <th>Nom</th>
                 <th>Prénom</th>
                 <th>Date de naissance</th>
@@ -38,9 +38,9 @@ include 'layout/header.php';
         </thead>
 
         <tbody>
-        <?php foreach ($clients as $client): ?>
+        <?php foreach ($clients as $index=> $client): ?>
             <tr>
-                <td><?= $client["id"] ?></td>
+                <td><?= $index+1 ?></td>
                 <td><?= $client["nom"] ?></td>
                 <td><?= $client["prenom"] ?></td>
                 <td><?= $client["datenaissance"] ?></td>
