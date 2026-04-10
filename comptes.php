@@ -17,9 +17,8 @@ include 'layout/header.php';
     <div class="row">
         <a href="createCompte.php">
             <button class="btn btn-primary">
-                <i class="lni lni-user"></i> Nouveau compte
-            </button>
-        </a>
+                <i class="lni lni-wallet"></i> Nouveau compte
+            </button> </a>
     </div>
 
     <hr>
@@ -50,7 +49,7 @@ include 'layout/header.php';
                     <td><?= $compte["codeguichet"] ?></td>
                     <td><?= $compte["clerib"] ?></td>
                     <td><?= $compte["titulaire"] ?></td>
-                    <td><?= $compte["solde"]." ".$compte["devise"] ?></td>
+                    <td><?= $compte["solde"] . " " . $compte["devise"] ?></td>
                     <td><?= $compte["datecreation"] ?></td>
                     <td>
 

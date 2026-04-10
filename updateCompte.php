@@ -54,6 +54,16 @@ $sql = "SELECT * FROM compte WHERE id = ?";
 $stmt = $con->prepare($sql);
 $stmt->execute([$id_compte]);
 $compte = $stmt->fetch(PDO::FETCH_ASSOC);
+if (!$compte) {
+    $title = "Erreur";
+    include 'layout/header.php';
+    echo "<div class='container mt-4'>";
+    echo "<div class='alert alert-danger'>Compte introuvable.</div>";
+    echo "<a href='comptes.php' class='btn btn-secondary'>Retour</a>";
+    echo "</div>";
+    include 'layout/footer.php';
+    exit;
+}
 
 $title = "Modifier le compte";
 include 'layout/header.php';

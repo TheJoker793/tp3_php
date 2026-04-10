@@ -36,6 +36,18 @@ $stmt = $con->prepare($sql);
 $stmt->execute([$id_client]);
 $client = $stmt->fetch(PDO::FETCH_ASSOC);
 
+if (!$client) {
+    $title = "Erreur";
+    include 'layout/header.php';
+    echo "<div class='container mt-4'>";
+    echo "<div class='alert alert-danger'>Client introuvable.</div>";
+    echo "<a href='clients.php' class='btn btn-secondary'>Retour</a>";
+    echo "</div>";
+    include 'layout/footer.php';
+    exit;
+}
+
+
 $title = "Modifier le client";
 
 include 'layout/header.php';
