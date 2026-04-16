@@ -1,10 +1,6 @@
 <?php
-  require './config/session.php';
-
-	// On déconnecte l'utilisateur => Destruction de la session
-  session_destroy();
-  unset($_SESSION["user_session"]);
-
-	//Puis on le redirige vers la page de connexion
-  header('Location:login.php');
+session_start();
+session_destroy();
+header('Location: login.php');
+exit();
 ?>

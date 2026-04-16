@@ -45,6 +45,31 @@ $currentPage = basename($_SERVER['PHP_SELF']);
         </li>
 
       </ul>
+
+      <!-- DROPDOWN UTILISATEUR -->
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+             data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="lni lni-user"></i> 
+            <?= isset($connected_user) ? htmlspecialchars($connected_user['user_name']) : 'Compte' ?>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+            <li>
+              <a class="dropdown-item" href="profil.php">
+                <i class="lni lni-user"></i> Mon profil
+              </a>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <li>
+              <a class="dropdown-item text-danger" href="logout.php">
+                <i class="lni lni-exit"></i> Déconnexion
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
     </div>
   </div>
 </nav>

@@ -1,4 +1,6 @@
 <?php
+require('./config/session.php'); 
+
 require_once './config/connexion.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
