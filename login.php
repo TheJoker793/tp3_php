@@ -1,13 +1,12 @@
-<?php 
+<?php
 session_start();
 
-// Si déjà connecté → rediriger directement vers index
 if (isset($_SESSION["user_session"])) {
     header('Location: index.php');
     exit();
 }
 
-require('./config/connexion.php'); 
+require('./config/connexion.php');
 
 function test_input($data) {
     return htmlspecialchars(stripslashes(trim($data)));
@@ -30,23 +29,17 @@ if (!empty($_POST)) {
     $user = $reponse->fetch(PDO::FETCH_ASSOC);
 
     if ($user && password_verify($userPassword, $user['user_password'])) {
-        $_SESSION["user_session"] = $user['user_id']; 
+        $_SESSION["user_session"] = $user['user_id'];
         header('Location: index.php');
         exit();
     } else {
         $error = "Login ou mot de passe incorrect !";
     }
 }
+
+$title = "Connexion";
+include 'layout/header.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <title>Connexion</title>
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/icon-font/lineicons.css">
-</head>
-<body>
 
 <div class="signin-form">
     <div class="container">
@@ -55,20 +48,20 @@ if (!empty($_POST)) {
             <hr>
 
             <div id="error">
-                <?php if (isset($error)) { ?>
+                <?php if (isset($error)) : ?>
                     <div class="alert alert-danger">
-                        <i class="lni lni-warning"></i> <?php echo $error; ?>
+                        <i class="lni lni-warning"></i> <?= $error ?>
                     </div>
-                <?php } ?>
+                <?php endif; ?>
             </div>
 
             <div class="row mb-1">
-                <input type="text" class="form-control" name="user_name" 
+                <input type="text" class="form-control" name="user_name"
                        placeholder="Login ou E-mail" required />
             </div>
 
             <div class="row mb-3">
-                <input type="password" class="form-control" name="user_password" 
+                <input type="password" class="form-control" name="user_password"
                        placeholder="Mot de passe" required />
             </div>
 
@@ -80,8 +73,8 @@ if (!empty($_POST)) {
 
             <br>
             <label>
-                Vous n'avez pas un compte ! 
-                <a href="sign-up.php">Inscription</a>
+                Vous n'avez pas un compte !
+                <a href="signup.php">Inscription</a>
             </label>
         </form>
     </div>
