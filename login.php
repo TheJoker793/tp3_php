@@ -41,7 +41,6 @@ $title = "Connexion";
 include 'layout/header.php';
 ?>
 
-<div class="signin-form">
     <div class="container">
         <form class="form-signin" method="post" id="login-form">
             <h2 class="form-signin-heading">Connexion</h2>
@@ -78,6 +77,5 @@ include 'layout/header.php';
             </label>
         </form>
     </div>
-</div>
 
 <?php include 'layout/footer.php'; ?>

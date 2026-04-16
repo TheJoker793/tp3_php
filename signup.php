@@ -71,7 +71,6 @@ $title = "Inscription";
 include 'layout/header.php';
 ?>
 
-<div class="signin-form">
     <div class="container">
         <form method="post" class="form-signin">
             <h2 class="form-signin-heading">Inscription</h2>
@@ -113,6 +112,5 @@ include 'layout/header.php';
             </label>
         </form>
     </div>
-</div>
 
 <?php include 'layout/footer.php'; ?>
