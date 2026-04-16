@@ -1,7 +1,7 @@
 <?php
 // config/session.php
 session_start();
-require 'connexion.php'; // ✅ chemin absolu, toujours correct
+require 'connexion.php'; 
 
 if (!isset($_SESSION["user_session"])) {
     header('Location: login.php');
