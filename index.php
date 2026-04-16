@@ -1,4 +1,5 @@
     <?php
+    $title = "Accueil";
       include 'layout/header.php';
       ?>
     
