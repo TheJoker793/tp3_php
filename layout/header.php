@@ -50,15 +50,10 @@ $pagesPubliques = ['login.php', 'signup.php'];
           <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
              data-bs-toggle="dropdown" aria-expanded="false">
             <i class="lni lni-user"></i>
-            <?= isset($connected_user) ? htmlspecialchars($connected_user['user_name']) : 'Compte' ?>
+            <?= isset($connected_user) ? htmlspecialchars($connected_user['user_name']) : null ?>
           </a>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-            <li>
-              <a class="dropdown-item" href="#">
-                <i class="lni lni-user"></i> Mon profil
-              </a>
-            </li>
-            <li><hr class="dropdown-divider"></li>
+
             <li>
               <a class="dropdown-item text-danger" href="logout.php">
                 <i class="lni lni-exit"></i> Déconnexion
